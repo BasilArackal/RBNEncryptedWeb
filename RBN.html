@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+<head>
+	<title>RBN Encrypted</title>
+	<meta charset="utf-8"/>
+	<link rel="shortcut icon" href="TB.jpg"/>
+	<style>
+		#toast{
+			position: fixed;
+			top: 440px;
+			left: 45%;
+			width: 270px;
+			margin-left: -100px;
+			border: 1px solid #666;
+			background-color: #000000;
+			color: #ffffff;
+			font-size: 12px;
+			padding: 7px 0 ;
+			border-radius: 5%;
+			text-align:center;
+			opacity: .9;
+		 
+			/*The good stuff */
+			-webkit-transition: opacity 1.5s ease-out;  /* Saf3.2+, Chrome */
+			-moz-transition: opacity 1.5s ease-out;  /* FF4+ */
+			-ms-transition: opacity 1.5s ease-out;  /* IE10? */
+			-o-transition: opacity 1.5s ease-out;  /* Opera 10.5+ */
+			transition: opacity 1.5s ease-out;	
+	 
+		}
+		body{margin: auto; width: 450px; height: 500px; font-family: arial;}
+		#status{
+			position: relative;
+			background-color: black;
+			width: 270px;
+			height: 10px;
+			margin: auto;
+			font-weight: bold;
+			padding-left: 15px;
+			padding-right: 15px;
+			padding-top: 2px;
+			padding-bottom: 13px;
+			color: white;
+			top: 0px;
+			text-align: right;
+			font-family: arial;
+			font-size: 16px;
+			font-weight: initial;
+		}
+		#Box{
+			position: relative;
+			background-color: black;
+			width: 100%px;
+			height: 385px;
+			margin: auto;
+			font-weight: bold;
+		}
+		div input{position: absolute;top: 220px; width: 85%; padding: 5px; border-radius: 5px; left: 15px;}
+		div input:focus{border: 2px solid rgb(139, 218, 0);}
+		div button{
+			padding: 10px;  
+			position: absolute; 
+			top: 270px; 
+			left: 115px;
+			border-radius: 6%;
+		}
+		#title{
+			color: white;
+			width: 100%px;
+			height: 10px;
+			font-family: arial;
+			text-align: left;
+			font-size: 14px;
+			position: relative;
+			padding-bottom: 10px;
+			padding-top: 5px;
+			padding-left:10px;
+			margin: auto;
+			background: #4c4c4c; /* Old browsers */
+			background: -moz-linear-gradient(top, #4c4c4c 0%, #595959 12%, #666666 25%, #474747 39%, #2c2c2c 50%, #000000 51%, #111111 60%, #2b2b2b 76%, #1c1c1c 91%, #131313 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4c4c4c), color-stop(12%,#595959), color-stop(25%,#666666), color-stop(39%,#474747), color-stop(50%,#2c2c2c), color-stop(51%,#000000), color-stop(60%,#111111), color-stop(76%,#2b2b2b), color-stop(91%,#1c1c1c), color-stop(100%,#131313)); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top, #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top, #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top, #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%); /* IE10+ */
+			background: linear-gradient(to bottom, #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=0 ); /* IE6-9 */
+		}
+		#green{color: #4EDF70; font-size: 20px; font-family: Arial; font-weight: initial; padding-left: 15px; padding-top: 15px;}
+		#g{color: #4EDF70; font-size: 12px;}
+		#phone{
+			border: 1px solid trasparent; 
+			width: 293px; 
+			margin: auto; 
+			height: 410px; 
+			position: relative; top: 110px; 
+			}
+			#ph{background-image: url("ph.png"); width: 389px; height: 649px;}
+	</style>
+	<script type="text/javascript">
+		var x = "Basil Arackal(Batz): Use it Only if you're authorized!";
+		var intervalCounter = 0;
+		var cc= 1000;
+
+		function hideToast(){
+			var alert = document.getElementById("toast");
+			alert.style.opacity = 0;
+			clearInterval(intervalCounter);
+		}
+		
+		function drawToast(message){
+			
+			var alert = document.getElementById("toast");			
+			if (alert == null){
+				var toastHTML = '<div id="toast">' + message + '</div>';
+				document.body.insertAdjacentHTML('beforeEnd', toastHTML);
+			}
+			else{
+				alert.innerHTML="Happy Bday 2u ThunderBuddy!<br>with lots of <3,<br>Batz & Katz";
+				alert.style.opacity = .9;
+			}
+			
+			
+			intervalCounter = setInterval("hideToast()", cc);
+			cc= 18000;
+		}
+		
+		function warning(){
+			drawToast(x);
+		}
+	</script>
+	<script>	
+		function Run(){
+
+			var input = document.getElementById("in");
+			var box = document.getElementById("Box");
+			document.getElementById("title").innerHTML="Oh Well!"
+			if(input.value==="RatZ")
+			{
+				warning();
+				box.innerHTML="<audio autoplay><source src='s.mp3'>UNSUPPORTED BROWSER</audio><img src='pic.jpg' width='100%' height='100%'/>";				
+			}
+				
+			else
+			{
+				box.style.fontSize="32px";
+				box.style.fontWeight="initial";
+				box.style.backgroundColor="White";
+				box.style.color = 'black';
+				box.innerHTML="\"" + input.value + "\" is not a valid AccessKey!<br> Try Again.<br><br>Beware 3 wrong attempts will result in FBI knocking on your doors!";
+			}
+				
+		}
+	</script>
+</head>
+<body onload="warning()">
+	<div id="ph">
+		<div id="phone">
+			<div id="title">RBN Encrypted</div>
+			<div id="Box">		
+				<div id="green" >
+						^_^<br><br>
+						THUNDERBUDDIES<br>
+						RULE<br><br>
+						^_^
+				</div>
+				<input id="in" type="text" placeholder="ID yourself" autofocus>ID here</input><br>
+				<button onclick="Run()">SEND</button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
